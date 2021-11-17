@@ -1,0 +1,17 @@
+[
+    {
+        "title": "PS5",
+        "blogConent": "I LOVE THE NEW PLAYSTATION!",
+        "user_id": 1
+    },
+    {
+        "title": "Nokia",
+        "blogContent": "The Nokia phone is the coolest thing I have ever seen!",
+        "user_id": 2
+    },
+    {
+        "title": "Xbox",
+        "blogContent": "The new xbox is awful",
+        "user_id": 3
+    }
+]

@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(217, 255, 236);
+}
+
+nav {
+    background-color: rgb(46, 27, 27);
+    color: rgb(217, 255, 236);
+}
+
+.tech-header {
+text-align: center;
+}
+
+.btn {
+    color: rgb(217, 255, 236);
+}
+
+.card {
+    margin-bottom: 5px;
+    border: solid 2px rgb(46, 27, 27);
+}
+
+.card-body {
+    background-color: rgb(217, 255, 236);
+    color: rgb(46, 27, 27);
+}
+
+.card-header {
+    background-color: rgb(46, 27, 27);
+    font-weight: bolder;
+    color: rgb(217, 255, 236);
+}

@@ -13,5 +13,10 @@
         "title": "Xbox",
         "blogContent": "The new xbox is awful",
         "user_id": 3
+    },
+    {
+        "title": "IPHONE 12",
+        "blogContent": "Love it!",
+        "user_id": 4
     }
 ]

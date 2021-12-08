@@ -29,12 +29,14 @@ router.post('/login', async (req, res) => {
   }
 });
 router.post('/', async (req, res) => {
+  console.log("In post route")
 try{
   const userData = await User.create({
-    user_name: req.body.user_name,
+    username: req.body.username,
     email: req.body.email,
     password: req.body.password
   })
+  console.log("user-data", userData)
   req.session.save(() => {
     req.session.user_id = userData.id;
     req.session.logged_in = true;

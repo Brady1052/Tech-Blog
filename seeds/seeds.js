@@ -6,7 +6,7 @@ const { User, Comments, Blog } = require('../models');
 const seeds = async() =>{
 await sequelize.sync({force:true})
 console.log("Connected to database!")
-await User.bulkCreate(userData)
+await User.bulkCreate(userData,{individualHooks: true})
 console.log("Seeded the users!")
 await Blog.bulkCreate(blogData)
 console.log("Seeded blog data!")

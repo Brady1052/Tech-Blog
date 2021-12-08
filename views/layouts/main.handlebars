@@ -16,16 +16,11 @@
 
     <!-- Only display the logout button if the user is logged in -->
     {{#if logged_in}}
-
+        <button class="btn" id='newPost'><a class="nav-link active" href="/new/post">New Post +</a></button>
     <button class="btn" id="logout">Logout</button>
     {{else}}
     <button class="btn" id='home'><a href="/login">Login</a></button>
     {{/if}}
-    <ul class="nav justify-content-end">
-      <li class="nav-item">
-        <button class="btn" id='newPost'><a class="nav-link active" href="/post">New Post +</a></button>
-      </li>
-    </ul>
     <nav>
       <h1 class="tech-header">TECH BLOG</h1>
     </nav>
@@ -41,7 +36,7 @@
 
   <!-- Only include the logout script if the user is logged in -->
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="/logout.js"></script>
   {{/if}}
 </body>
 

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Blog } = require('../models');
-
+const withAuth = require('../utils/auth')
 router.get('/', async (req, res) => {
     try {
         const blogData = await Blog.findAll();
@@ -35,6 +35,19 @@ router.get('/new/post', (req,res)=> {
     } else {
         res.redirect('/login')
     }
+})
+router.get('/dashboard',withAuth, async(req,res)=>{
+try {
+    var allBlogs = await Blog.findAll({
+       where: {
+           user_id: req.sessions.user_id
+       } 
+    })
+const blog = allBlogs.map(blog => this.post.get({plain:true}))
+res.render('dashboard',{blog})    
+}catch (err) {
+    res.status(400).json(err)
+}
 })
 
 module.exports = router;

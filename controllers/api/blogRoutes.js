@@ -3,29 +3,17 @@ const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/post', withAuth, async (req, res) => {
+    console.log(req.body)
     try {
         const postInfo = await Blog.create({
-            blog_title: req.body.blog_title,
-            blog_body: req.body.post_body,
-            username: req.session.username,
-        })
+            title: req.body.title,
+            blogContent: req.body.postContent,
+            user_id: req.session.user_id,           
+        }) 
         res.json(postInfo)
     }catch (err) {
         res.status(400).json(err)
     }
-});
-
-router.post('/', withAuth, (req, res) => {
-    Blog.create({
-            blog_title: req.body.blog_title,
-            blog_body: req.body.post_body,
-            username: req.session.username
-        })
-        .then(dbPostData => res.json(dbPostData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
 });
 
 router.put('/:id', withAuth, (req, res) => {
